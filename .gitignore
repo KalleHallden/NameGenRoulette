@@ -1,0 +1,5 @@
+tokens.py
+*.pyc
+*.exe
+*.log
+*.debug
