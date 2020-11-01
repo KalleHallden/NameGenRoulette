@@ -1,10 +1,8 @@
 
 from ebird.api import get_taxonomy, get_taxonomy_forms, get_taxonomy_versions
 from tokens import get_creds
-import json
-import random
 
-def get_bird_name():
+def get_bird_names():
 	creds = get_creds()
 	taxonomy = get_taxonomy(creds['api_key'])
 	prev_name = ''
@@ -33,7 +31,5 @@ def get_bird_name():
 				bird_list.append(name)
 		except:
 			pass
-
-	n = random.randint(0,len(bird_list) -1)
-	return bird_list[n]
+	return bird_list
 
