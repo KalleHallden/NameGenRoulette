@@ -12,10 +12,11 @@ url = 'https://uk.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck=domai
 name_list = get_bird_names()
 
 while True:
-	print("----------------------------------")
-	print("SEARCHING...")
-	print("----------------------------------")
-
+	print('''
+----------------------------------
+SEARCHING...
+----------------------------------	
+	''')
 	n = random.randint(0,len(name_list) -1)
 	domain_name = name_list[n]
 
