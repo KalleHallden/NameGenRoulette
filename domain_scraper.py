@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support import expected_conditions as EC
 from ebird_api import get_bird_names 
 import time
 from menu import print_menu
@@ -22,10 +23,9 @@ while True:
 	url = 'https://uk.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck=' + domain_name + ".com"
 
 	browser.get(url)
-	time.sleep(2)
 	available = ''
 	try:
-		available = browser.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div[1]').text
+		available = wait.until(EC.visibility_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div/div/div[1]'))).text
 	except:
 		pass
 	available = available.split(' ')[1].split('\n')[0]
